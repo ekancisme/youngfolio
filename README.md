@@ -214,10 +214,16 @@ docker run -d -p 5001:5001 --name youngfolio-app youngfolio:latest
 
 Truy cập kiểm tra tại: `http://localhost:5001`
 
-### Tự động deploy lên VPS qua PowerShell
+### Tự động deploy lên VPS (Bash hoặc PowerShell)
 
-File [`deploy.ps1`](file:///home/youngltc/Documents/Coding/3D/deploy.ps1) cung cấp khả năng đóng gói tarball, tải lên VPS qua SSH, build container và reload Caddy Reverse Proxy hoàn toàn tự động:
+Dự án cung cấp sẵn cả script Bash ([`deploy.sh`](file:///home/youngltc/Documents/Coding/3D/deploy.sh)) cho Linux và PowerShell ([`deploy.ps1`](file:///home/youngltc/Documents/Coding/3D/deploy.ps1)) cho Windows:
 
+**Trên Linux / macOS:**
+```bash
+./deploy.sh "youngfolio" "ltcuong24.io.vn" 5001 "deploy.env"
+```
+
+**Trên Windows (PowerShell):**
 ```powershell
 ./deploy.ps1 -AppName "youngfolio" -Domain "ltcuong24.io.vn" -ContainerPort 5001 -EnvFile "deploy.env"
 ```
