@@ -41,7 +41,7 @@ cd '$remoteRoot'
 find . -mindepth 1 -maxdepth 1 ! -name source.tar.gz -exec rm -rf -- {} +
 tar -xzf source.tar.gz
 rm source.tar.gz
-docker build --build-arg CONTAINER_PORT=$ContainerPort -t '${AppName}:latest' .
+docker build --network=host --build-arg CONTAINER_PORT=$ContainerPort -t '${AppName}:latest' .
 docker rm -f '$AppName' >/dev/null 2>&1 || true
 docker run -d --name '$AppName' --restart unless-stopped --network web-net --env-file '$EnvFile' -p '127.0.0.1:${ContainerPort}:${ContainerPort}' '${AppName}:latest'
 for attempt in 1 2 3 4 5 6; do

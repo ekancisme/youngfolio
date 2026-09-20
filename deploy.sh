@@ -52,7 +52,7 @@ find . -mindepth 1 -maxdepth 1 ! -name source.tar.gz -exec rm -rf -- {} +
 tar -xzf source.tar.gz
 rm source.tar.gz
 
-docker build --build-arg CONTAINER_PORT=$CONTAINER_PORT -t "${APP_NAME}:latest" .
+docker build --network=host --build-arg CONTAINER_PORT=$CONTAINER_PORT -t "${APP_NAME}:latest" .
 docker rm -f "$APP_NAME" >/dev/null 2>&1 || true
 docker run -d --name "$APP_NAME" --restart unless-stopped --network web-net --env-file "$ENV_FILE" -p "127.0.0.1:${CONTAINER_PORT}:${CONTAINER_PORT}" "${APP_NAME}:latest"
 
