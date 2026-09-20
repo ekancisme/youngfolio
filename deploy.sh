@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_NAME="${1:-youngfolio}"
+APP_NAME="${1:-portfolio-app}"
 DOMAIN="${2:-ltcuong24.io.vn}"
 CONTAINER_PORT="${3:-5001}"
 ENV_FILE="${4:-deploy.env}"

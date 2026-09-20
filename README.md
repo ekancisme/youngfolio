@@ -220,12 +220,12 @@ Dự án cung cấp sẵn cả script Bash ([`deploy.sh`](file:///home/youngltc/
 
 **Trên Linux / macOS:**
 ```bash
-./deploy.sh "youngfolio" "ltcuong24.io.vn" 5001 "deploy.env"
+./deploy.sh "portfolio-app" "ltcuong24.io.vn" 5001 "deploy.env"
 ```
 
 **Trên Windows (PowerShell):**
 ```powershell
-./deploy.ps1 -AppName "youngfolio" -Domain "ltcuong24.io.vn" -ContainerPort 5001 -EnvFile "deploy.env"
+./deploy.ps1 -AppName "portfolio-app" -Domain "ltcuong24.io.vn" -ContainerPort 5001 -EnvFile "deploy.env"
 ```
 
 ---
